@@ -33,11 +33,11 @@ app.use(function (req, res, next) {
   
   start();
 
-app.get('/api', async (req,res) => {
+app.get('/', async (req,res) => {
     res.json('this is time-series api')
 })
 
-app.get('/api/alldatapoints', async (req, res) => {
+app.get('/alldatapoints', async (req, res) => {
 try {
     const allData = await dataModel.find({});
     console.log(allData)
@@ -47,7 +47,7 @@ try {
 }
 });
 
-app.get('/api/datapoint/:id', async (req,res) => {
+app.get('/datapoint/:id', async (req,res) => {
     try {
         const id = req.params.id;
         const data = await dataModel.aggregate([
@@ -63,7 +63,7 @@ app.get('/api/datapoint/:id', async (req,res) => {
     }   
 })
 
-app.post('/api/adddatapoint', async (req,res) => {
+app.post('/adddatapoint', async (req,res) => {
 
     try {
         const newData = req.body; 
