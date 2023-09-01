@@ -31,7 +31,7 @@ export default function Charts({id}) {
                 <YAxis/>
                 <Tooltip />
                 <Legend />
-                <Line type="monotone" dataKey='value' stroke="#8884d8" activeDot={{ r: 8 }}
+                <Line type="monotone" dataKey={`Data Point${id}`} stroke="#8884d8" activeDot={{ r: 8 }}
                 />
                 
             </LineChart>
